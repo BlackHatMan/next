@@ -10,15 +10,20 @@ export default function Login() {
         <div className={style.wrapper}>
           <form className={style.form}>
             <h1>Login</h1>
-            <div className={style.wrapperInput}>
-              <span>Username</span>
+            <div className={style.wrap_input}>
+              <span className={style.label}>Username</span>
               <input type="text" placeholder="type your username" />
-              <Person2OutlinedIcon />
+
+              <span className={style.focus_input}>
+                <Person2OutlinedIcon />
+              </span>
             </div>
-            <div className={style.wrapperInput}>
-              <span>Password</span>
+            <div className={style.wrap_input}>
+              <span className={style.label}>Password</span>
               <input type="password" placeholder="type your password" />
-              <LockOutlinedIcon />
+              <span>
+                <LockOutlinedIcon />
+              </span>
             </div>
             <button type="submit">Login</button>
           </form>

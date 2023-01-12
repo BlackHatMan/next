@@ -1,3 +1,6 @@
+$hover-gray: #7f7f7f;
+$hover-purple: #a64bf4;
+
 .container {
   font-family: 'Comic Neue', cursive;
   width: 100%;
@@ -43,7 +46,7 @@
   }
 }
 
-.wrapperInput {
+.wrap_input {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -57,16 +60,40 @@
     border: none;
     padding: 15px 5px 15px 35px;
     outline: none;
+
+    &::placeholder {
+      opacity: 0.4;
+    }
+    &:focus::placeholder {
+      color: transparent;
+    }
+    &:focus + svg {
+      fill: $hover-purple;
+      opacity: 1;
+    }
   }
-  span {
+
+  .label {
     font-size: 1.4rem;
     padding-left: 7px;
   }
+
   svg {
     width: 20px;
     height: 20px;
     position: absolute;
     top: 50%;
     left: 10px;
+    opacity: 0.5;
+  }
+}
+.focus_input {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  ::before {
+    content: '';
   }
 }
