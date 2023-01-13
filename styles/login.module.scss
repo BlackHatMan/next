@@ -1,4 +1,5 @@
 $hover-gray: #7f7f7f;
+$border-gray: #d9d9d9;
 $hover-purple: #a64bf4;
 
 .container {
@@ -34,7 +35,6 @@ $hover-purple: #a64bf4;
 
   button {
     font-size: 1.6rem;
-    color: #fff;
     line-height: 1.2;
     text-transform: uppercase;
     display: flex;
@@ -43,6 +43,7 @@ $hover-purple: #a64bf4;
     padding: 0 20px;
     width: 100%;
     height: 50px;
+    background: transparent;
   }
 }
 
@@ -51,7 +52,6 @@ $hover-purple: #a64bf4;
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-bottom: 2px solid #d9d9d9;
   margin: 10px 0;
 
   input {
@@ -67,15 +67,39 @@ $hover-purple: #a64bf4;
     &:focus::placeholder {
       color: transparent;
     }
-    &:focus + svg {
+    &:focus + .focus_input svg {
       fill: $hover-purple;
       opacity: 1;
     }
+    &:focus + .focus_input::before {
+      width: 100%;
+    }
   }
 
-  .label {
+  .title {
     font-size: 1.4rem;
     padding-left: 7px;
+  }
+}
+
+.focus_input {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid $border-gray;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1.5px;
+    background-color: $hover-gray;
+    transition: all 0.4s;
   }
 
   svg {
@@ -85,15 +109,5 @@ $hover-purple: #a64bf4;
     top: 50%;
     left: 10px;
     opacity: 0.5;
-  }
-}
-.focus_input {
-  position: absolute;
-  pointer-events: none;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  ::before {
-    content: '';
   }
 }
