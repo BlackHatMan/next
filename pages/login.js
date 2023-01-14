@@ -26,8 +26,12 @@ export default function Login() {
                 <LockOutlinedIcon />
               </span>
             </div>
-
-            <button type="submit">Login</button>
+            <div className={style.text_right}>
+              <a className={style.title}>Forgot password?</a>
+            </div>
+            <div className={style.button_gradient}>
+              <button type="submit">Login</button>
+            </div>
           </form>
         </div>
       </div>
