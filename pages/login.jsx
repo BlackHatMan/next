@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GoogleIcon from '@mui/icons-material/Google';
 import style from '../styles/login.module.scss';
 
 export default function Login() {
@@ -31,6 +34,17 @@ export default function Login() {
             </div>
             <div className={style.button_gradient}>
               <button type="submit">Login</button>
+            </div>
+            <div className={style.society}>
+              <a href="/login">
+                <FacebookOutlinedIcon style={{ color: 'darkblue' }} />
+              </a>
+              <a href="/login">
+                <TwitterIcon color="primary" />
+              </a>
+              <a href="/login">
+                <GoogleIcon color="error" />
+              </a>
             </div>
           </form>
         </div>
