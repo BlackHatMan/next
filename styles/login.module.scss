@@ -1,6 +1,4 @@
-$hover-gray: #7f7f7f;
-$border-gray: #d9d9d9;
-$hover-purple: #a64bf4;
+@import './variables';
 
 .container {
   font-family: 'Comic Neue', cursive;
@@ -18,7 +16,7 @@ $hover-purple: #a64bf4;
   width: 500px;
   height: 100%;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: $global-white;
 }
 
 .form {
@@ -129,7 +127,7 @@ $hover-purple: #a64bf4;
     cursor: pointer;
     z-index: 100;
     border: none;
-    color: white;
+    color: $global-white;
     font-size: 1.6rem;
     line-height: 1.2;
     text-transform: uppercase;
