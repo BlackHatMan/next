@@ -8,33 +8,35 @@ import style from '../styles/login.module.scss';
 
 export default function Login() {
   return (
-    <>
-      <div className={style.container}>
-        <div className={style.wrapper}>
-          <form className={style.form}>
-            <h1>Login</h1>
+    <div className={style.container}>
+      <div className={style.wrapper}>
+        <form className={style.form}>
+          <h1>Login</h1>
 
-            <div className={style.wrap_input}>
-              <span className={style.title}>Username</span>
-              <input type="text" placeholder="type your username" />
-              <span className={style.focus_input}>
-                <Person2OutlinedIcon />
-              </span>
-            </div>
+          <div className={style.wrap_input}>
+            <span className={style.title}>Username</span>
+            <input type="text" placeholder="type your username" />
+            <span className={style.focus_input}>
+              <Person2OutlinedIcon />
+            </span>
+          </div>
 
-            <div className={style.wrap_input}>
-              <span className={style.title}>Password</span>
-              <input type="password" placeholder="type your password" />
-              <span className={style.focus_input}>
-                <LockOutlinedIcon />
-              </span>
-            </div>
-            <div className={style.text_right}>
-              <a className={style.title}>Forgot password?</a>
-            </div>
-            <div className={style.button_gradient}>
-              <button type="submit">Login</button>
-            </div>
+          <div className={style.wrap_input}>
+            <span className={style.title}>Password</span>
+            <input type="password" placeholder="type your password" />
+            <span className={style.focus_input}>
+              <LockOutlinedIcon />
+            </span>
+          </div>
+          <div className={style.text_right}>
+            <a className={style.title}>Forgot password?</a>
+          </div>
+          <div className={style.button_gradient}>
+            <button type="submit">Login</button>
+          </div>
+          <div className={style.society_container}>
+            <span className={style.title}>Or Sign Up Using </span>
+
             <div className={style.society}>
               <a href="/login">
                 <FacebookOutlinedIcon style={{ color: 'darkblue' }} />
@@ -46,9 +48,14 @@ export default function Login() {
                 <GoogleIcon color="error" />
               </a>
             </div>
-          </form>
-        </div>
+            <div className={style.footer}>
+              <a className={style.title} href="/login">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   );
 }

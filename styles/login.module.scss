@@ -143,10 +143,13 @@ $hover-purple: #a64bf4;
   }
 }
 
+.society_container {
+  margin-top: 25px;
+}
 .society {
   display: flex;
   justify-content: center;
-  margin: 25px 0;
+  margin-top: 10px;
   padding: 5px 0;
   width: 100%;
   height: 60px;
@@ -156,4 +159,10 @@ $hover-purple: #a64bf4;
     height: 40px;
     margin: 0 3px;
   }
+}
+
+.footer {
+  margin: 50px 0 10px 0;
+  text-transform: uppercase;
+  text-align: center;
 }
