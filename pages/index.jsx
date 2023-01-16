@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import panda from '../public/panda.jpg';
 import Triangle from '../public/triangle.svg';
+import Dollar from '../public/dollar.svg';
 import style from '../styles/welcome.module.scss';
 
 export default function Home() {
@@ -20,7 +21,6 @@ export default function Home() {
             Watch your favorite <br /> animal online
           </h1>
           <div className={style.wrapSlider}>
-            <button>Watch Online</button>
             <div className={style.slider}>
               <figure>
                 <Image src={panda} fill={true} alt="panda" />
@@ -34,6 +34,9 @@ export default function Home() {
                       <label className={style.watch}>Watch online</label>
                     </Link>
                     <Link href="/">
+                      <label className={style.ring}>
+                        <Dollar />
+                      </label>
                       <label className={style.watch}>Donate</label>
                     </Link>
                   </div>
