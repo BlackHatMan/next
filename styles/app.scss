@@ -1,9 +1,14 @@
+.home-container {
+}
 main {
-    max-width: 1200px;
-    padding: 5rem 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  max-width: 100%;
+  height: 100vh;
+  background-image: url('../public/mainBg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
 }
