@@ -1,0 +1,71 @@
+@import '../styles/variables';
+
+.slide {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px 30px;
+  width: 280px;
+  min-width: 250px;
+  height: 400px;
+  cursor: grab;
+
+  .slideContent {
+    max-width: 200px;
+  }
+
+  img {
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  label {
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  p {
+    position: relative;
+    z-index: 10;
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+}
+
+.wrapLinks {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;
+
+    &:hover {
+      color: $light-green;
+    }
+    &:hover svg {
+      fill: $light-green;
+    }
+  }
+
+  .ring {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 50%;
+
+    svg {
+      fill: $global-white;
+    }
+  }
+}
