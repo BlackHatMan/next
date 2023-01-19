@@ -5,11 +5,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
 
 import 'swiper/css';
-
-import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 
 export default function Home() {
+  const item = new Array(10).fill('1');
   return (
     <div className="home-container">
       <Head>
@@ -25,30 +24,28 @@ export default function Home() {
           {
             <Swiper
               className={style.slider}
-              createElements
               modules={[Pagination]}
-              spaceBetween={20}
-              slidesPerView={3}
-              pagination={{ clickable: true }}
+              spaceBetween={5}
+              slidesPerView={4}
+              initialSlide={1}
+              centeredSlides
+              watchSlidesProgress
+              slideToClickedSlide
+              pagination={{ clickable: true, draggable: true, type: 'fraction' }}
             >
-              <SwiperSlide>
-                <Slide />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Slide />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Slide />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Slide />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Slide />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Slide />
-              </SwiperSlide>
+              {item.map((_, i) => {
+                return (
+                  <SwiperSlide key={i}>
+                    {({ isActive }) => {
+                      return (
+                        <div style={{ transform: isActive ? 'scale(1)' : 'scale(0.6)' }}>
+                          <Slide />
+                        </div>
+                      );
+                    }}
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           }
         </section>
