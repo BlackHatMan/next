@@ -6,6 +6,7 @@ import { Pagination } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/scss/pagination';
+import 'swiper/scss/navigation';
 
 export default function Home() {
   const item = new Array(10).fill('1');
@@ -25,23 +26,19 @@ export default function Home() {
             <Swiper
               className={style.slider}
               modules={[Pagination]}
-              spaceBetween={5}
               slidesPerView={4}
               initialSlide={1}
               centeredSlides
               watchSlidesProgress
               slideToClickedSlide
-              pagination={{ clickable: true, draggable: true, type: 'fraction' }}
+              grabCursor
+              pagination={{ clickable: true, draggable: true, type: 'bullets' }}
             >
               {item.map((_, i) => {
                 return (
                   <SwiperSlide key={i}>
                     {({ isActive }) => {
-                      return (
-                        <div style={{ transform: isActive ? 'scale(1)' : 'scale(0.6)' }}>
-                          <Slide />
-                        </div>
-                      );
+                      return <Slide isActive={isActive} />;
                     }}
                   </SwiperSlide>
                 );
