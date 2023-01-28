@@ -5,9 +5,9 @@ import Triangle from '../public/triangle.svg';
 import Dollar from '../public/dollar.svg';
 import style from './slide.module.scss';
 
-export default function Slide(props) {
+export default function Slide() {
   return (
-    <div className={props.isActive ? [style.active, style.slide].join(' ') : style.slide}>
+    <div className={style.slide}>
       <Image src={panda} fill={true} alt="panda" />
       <div className={style.slideContent}>
         <p>Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</p>

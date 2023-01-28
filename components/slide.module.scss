@@ -1,8 +1,5 @@
 @import '../styles/variables';
 
-.active {
-  transform: scale(1);
-}
 .slide {
   position: relative;
   display: flex;
@@ -14,9 +11,6 @@
   border-radius: 15px;
   transition: transform ease-in-out 0.3s;
   overflow: hidden;
-  &:not(.active) {
-    transform: scale(0.6);
-  }
 
   .slideContent {
     max-width: 200px;

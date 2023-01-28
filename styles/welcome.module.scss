@@ -8,9 +8,19 @@
     font-size: 9rem;
     font-weight: 900;
   }
-}
 
-.slider {
-  width: 1000px;
-  height: 460px;
+  :global {
+    .swiper {
+      max-width: 1000px;
+      height: 460px;
+      margin: 0;
+      position: absolute;
+      right: 10px;
+    }
+    .swiper-wrapper {
+      .swiper-slide:not(.swiper-slide-active) {
+        transform: scale(0.7);
+      }
+    }
+  }
 }

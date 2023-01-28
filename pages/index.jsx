@@ -17,38 +17,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <section className={style.container}>
-          <h1>
-            Watch your favorite <br /> animal online
-          </h1>
-          {
-            <Swiper
-              className={style.slider}
-              modules={[Pagination]}
-              slidesPerView={4}
-              initialSlide={1}
-              centeredSlides
-              watchSlidesProgress
-              slideToClickedSlide
-              grabCursor
-              pagination={{ clickable: true, draggable: true, type: 'bullets' }}
-            >
-              {item.map((_, i) => {
-                return (
-                  <SwiperSlide key={i}>
-                    {({ isActive }) => {
-                      return <Slide isActive={isActive} />;
-                    }}
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          }
-        </section>
+      <main className={style.container}>
+        <h1>
+          Watch your favorite <br /> animal online
+        </h1>
+        {
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={4}
+            initialSlide={1}
+            centeredSlides
+            watchSlidesProgress
+            slideToClickedSlide
+            grabCursor
+            pagination={{ clickable: true, draggable: true, type: 'bullets' }}
+          >
+            {item.map((_, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <Slide />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        }
       </main>
-
-      <footer></footer>
     </div>
   );
 }
