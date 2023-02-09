@@ -10,6 +10,7 @@ import 'swiper/scss/pagination';
 
 import style from '../styles/welcome.module.scss';
 import { useRouter } from 'next/router';
+import { Button } from '../components/button/Button';
 
 const routes = [
   {
@@ -61,29 +62,32 @@ export default function Home() {
         </nav>
         <div className="theme">toggle</div>
       </header>
-      <h1>
-        Watch your favorite <br /> animal online
-      </h1>
-      {
-        <Swiper
-          modules={[Pagination]}
-          slidesPerView={4}
-          initialSlide={1}
-          centeredSlides
-          watchSlidesProgress
-          slideToClickedSlide
-          grabCursor
-          pagination={{ clickable: true, draggable: true, type: 'bullets' }}
-        >
-          {item.map((_, i) => {
-            return (
-              <SwiperSlide key={i}>
-                <Slide />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      }
+      <div className={style.wrapper}>
+        <h1>
+          Watch your favorite <br /> animal online
+        </h1>
+        <Button>Watch online</Button>
+        {
+          <Swiper
+            modules={[Pagination]}
+            slidesPerView={4}
+            initialSlide={1}
+            centeredSlides
+            watchSlidesProgress
+            slideToClickedSlide
+            grabCursor
+            pagination={{ clickable: true, draggable: true, type: 'bullets' }}
+          >
+            {item.map((_, i) => {
+              return (
+                <SwiperSlide key={i}>
+                  <Slide />
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        }
+      </div>
     </main>
   );
 }

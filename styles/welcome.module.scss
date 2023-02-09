@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 94px;
+  height: $header-height;
   background-color: $global-white;
   color: black;
   font-family: Roboto, sans-serif;
@@ -42,18 +42,24 @@
   color: $global-white;
 
   h1 {
-    padding: 200px 0 0 0;
     font-size: 9rem;
     font-weight: 900;
   }
-
+  .wrapper {
+    padding-top: $header-height;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   :global {
     .swiper {
       max-width: 1000px;
       height: 460px;
       margin: 0;
       position: absolute;
-      right: 3px;
+      right: 0;
+      bottom: 0;
     }
     .swiper-wrapper {
       .swiper-slide:not(.swiper-slide-active) {
