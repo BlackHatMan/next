@@ -79,8 +79,19 @@
     .swiper-scrollbar-drag {
       position: relative;
       bottom: 3px;
-      background-color: aliceblue;
+      background-color: $pagination-white;
       height: 10px;
+    }
+    .swiper-pagination {
+      bottom: 50px;
+      font-size: 2.4rem;
+      font-weight: 800;
+      font-family: 'Roboto', sans-serif;
+      color: $pagination-white;
+      & span:last-child {
+        font-size: 1.4rem;
+        color: $pagination-gray;
+      }
     }
     .swiper-wrapper {
       .swiper-slide {

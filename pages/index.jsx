@@ -6,9 +6,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Slide from '../components/Slide';
 
-import 'swiper/css'; /*
+import 'swiper/css';
 import 'swiper/scss/pagination';
-import 'swiper/css/scrollbar'; */
 
 import style from '../styles/welcome.module.scss';
 
@@ -39,12 +38,6 @@ export default function Home() {
   const item = new Array(10).fill('1');
   const router = useRouter();
 
-  /*  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
-  }; */
   return (
     <main className={style.main}>
       <Head>
@@ -78,12 +71,17 @@ export default function Home() {
 
         {
           <Swiper
-            modules={[Scrollbar]}
+            modules={[Scrollbar, Pagination]}
             slidesPerView={4}
             centeredSlides
             spaceBetween={30}
             slideToClickedSlide
-            //pagination={pagination}
+            pagination={{
+              type: 'fraction',
+              renderFraction: function (currentClass, totalClass) {
+                return '<span class="' + currentClass + '"></span>' + '/' + '<span class="' + totalClass + '"></span>';
+              },
+            }}
             scrollbar={{ hide: false, draggable: true, dragSize: 30 }}
           >
             {item.map((_, i) => {
