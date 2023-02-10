@@ -1,11 +1,16 @@
+import { useSwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import panda from '../public/panda.jpg';
 import Triangle from '../public/triangle.svg';
 import Dollar from '../public/dollar.svg';
+
 import style from './slide.module.scss';
 
 export default function Slide() {
+  const swiperSlide = useSwiperSlide();
+  console.log('file: Slide.jsx:13 ~ swiperSlide', swiperSlide.isActive);
   return (
     <div className={style.slide}>
       <Image src={panda} fill={true} alt="panda" />

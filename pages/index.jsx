@@ -1,16 +1,16 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
+import { Button } from '../components/button/Button';
+import { useRouter } from 'next/router';
+import { Pagination, Scrollbar } from 'swiper';
 import Head from 'next/head';
 import Link from 'next/link';
 import Slide from '../components/Slide';
 
-import 'swiper/css';
-import 'swiper/scss/navigation';
+import 'swiper/css'; /*
 import 'swiper/scss/pagination';
+import 'swiper/css/scrollbar'; */
 
 import style from '../styles/welcome.module.scss';
-import { useRouter } from 'next/router';
-import { Button } from '../components/button/Button';
 
 const routes = [
   {
@@ -38,9 +38,15 @@ const routes = [
 export default function Home() {
   const item = new Array(10).fill('1');
   const router = useRouter();
-  console.log('🚀 ~ file: index.jsx:41 ~ Home ~ router', router);
+
+  /*  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + '</span>';
+    },
+  }; */
   return (
-    <main className={style.container}>
+    <main className={style.main}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -63,20 +69,22 @@ export default function Home() {
         <div className="theme">toggle</div>
       </header>
       <div className={style.wrapper}>
-        <h1>
-          Watch your favorite <br /> animal online
-        </h1>
-        <Button>Watch online</Button>
+        <div className={style.title}>
+          <h1>
+            Watch your favorite <br /> animal online
+          </h1>
+          <Button icon>Watch online</Button>
+        </div>
+
         {
           <Swiper
-            modules={[Pagination]}
+            modules={[Scrollbar]}
             slidesPerView={4}
-            initialSlide={1}
             centeredSlides
-            watchSlidesProgress
+            spaceBetween={30}
             slideToClickedSlide
-            grabCursor
-            pagination={{ clickable: true, draggable: true, type: 'bullets' }}
+            //pagination={pagination}
+            scrollbar={{ hide: false, draggable: true, dragSize: 30 }}
           >
             {item.map((_, i) => {
               return (

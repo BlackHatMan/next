@@ -9,7 +9,7 @@
   height: $header-height;
   background-color: $global-white;
   color: black;
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif;
   .logo {
     font-size: 3.6rem;
     font-weight: 900;
@@ -38,11 +38,12 @@
   }
 }
 
-.container {
+.main {
   color: $global-white;
 
   h1 {
-    font-size: 9rem;
+    padding: 120px 0 50px 0;
+    font-size: 8rem;
     font-weight: 900;
   }
   .wrapper {
@@ -61,9 +62,32 @@
       right: 0;
       bottom: 0;
     }
+    .swiper-scrollbar {
+      background-color: $slider-gray;
+      width: 245px;
+      border-radius: 2px;
+      height: 5px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 20px 0;
+    }
+    .swiper-scrollbar-horizontal {
+      position: absolute;
+      z-index: 50;
+    }
+    .swiper-scrollbar-drag {
+      position: relative;
+      bottom: 3px;
+      background-color: aliceblue;
+      height: 10px;
+    }
     .swiper-wrapper {
+      .swiper-slide {
+        transition: all 0.5s ease-out;
+      }
       .swiper-slide:not(.swiper-slide-active) {
-        transform: scale(0.7);
+        /*  transform: scale(0.7); */
       }
     }
   }
