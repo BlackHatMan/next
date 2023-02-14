@@ -73,9 +73,9 @@ export default function Home() {
         {
           <Swiper
             modules={[Scrollbar, Pagination]}
-            slidesPerView={4}
+            slidesPerView={4.5}
             centeredSlides
-            spaceBetween={30}
+            spaceBetween={0}
             slideToClickedSlide
             pagination={{
               type: 'fraction',

@@ -4,14 +4,13 @@
   position: relative;
   display: flex;
   flex-direction: column-reverse;
-  padding: 20px 30px;
-  width: 203px;
+  padding: 20px 15px;
+  width: 245px;
   height: 350px;
   border-radius: 10px;
   overflow: hidden;
 
-  .slideContent {
-    max-width: 200px;
+  .content {
   }
 
   img {
@@ -35,7 +34,7 @@
   }
 }
 
-.wrapLinks {
+.wrapper {
   display: flex;
   justify-content: space-between;
   width: 100%;
