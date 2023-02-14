@@ -15,7 +15,6 @@
     font-weight: 900;
     padding-left: 40px;
     line-height: 3rem;
-    letter-spacing: 0ch;
     .status {
       font-size: 1.8rem;
       letter-spacing: 0.4rem;
@@ -42,7 +41,7 @@
   color: $global-white;
 
   h1 {
-    padding: 120px 0 50px 0;
+    padding: 50px 0 50px 0;
     font-size: 8rem;
     font-weight: 900;
   }
@@ -54,6 +53,7 @@
     justify-content: center;
   }
   :global {
+    /* default slider(swiper) style classes */
     .swiper {
       max-width: 900px;
       height: 460px;
