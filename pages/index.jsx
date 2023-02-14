@@ -5,6 +5,7 @@ import { Pagination, Scrollbar } from 'swiper';
 import Head from 'next/head';
 import Link from 'next/link';
 import Slide from '../components/Slide';
+import iconPlay from '../public/play-btn.svg';
 
 import 'swiper/css';
 import 'swiper/scss/pagination';
@@ -66,7 +67,7 @@ export default function Home() {
           <h1>
             Watch your favorite <br /> animal online
           </h1>
-          <Button icon>Watch online</Button>
+          <Button startIcon={iconPlay()}>Watch online</Button>
         </div>
 
         {

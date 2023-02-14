@@ -1,11 +1,10 @@
-import SvgPlay from '../../public/play-btn.svg';
 import style from './button.module.scss';
 
-export const Button = ({ children, icon }) => {
+export const Button = ({ children, startIcon }) => {
   return (
     <button className={style.button}>
       <div className={style.wrapper}>
-        {icon && <SvgPlay />}
+        {startIcon}
         {children}
       </div>
     </button>
