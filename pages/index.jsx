@@ -67,7 +67,7 @@ export default function Home() {
           <h1>
             Watch your favorite <br /> animal online
           </h1>
-          <Button startIcon={iconPlay()}>Watch online</Button>
+          <Button startIcon={iconPlay}>Watch online</Button>
         </div>
 
         {
