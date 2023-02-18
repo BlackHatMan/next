@@ -56,13 +56,19 @@
     /* default slider(swiper) style classes */
 
     .swiper {
-      max-width: 1000px;
+      width: 1000px;
       height: 480px;
       margin: 0;
       position: absolute;
       right: 0;
       bottom: 0;
+      &::before {
+        content: url('../public/line.svg');
+        position: absolute;
+        top: 33%;
+      }
     }
+
     .swiper-scrollbar {
       background-color: $slider-gray;
       width: 245px;

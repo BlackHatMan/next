@@ -9,11 +9,12 @@ import Dollar from '../public/dollar.svg';
 import style from './slide.module.scss';
 
 export default function Slide() {
-  const swiperSlide = useSwiperSlide();
+  const isActive = useSwiperSlide().isActive;
   return (
-    <div className={style.slide}>
+    //<div className={isActive ? `${style.container} ${style.active}` : `${style.container}`}>
+    <div className={style.container}>
       <Image src={panda} fill={true} alt="panda" />
-      {swiperSlide.isActive && (
+      {isActive && (
         <div className={style.content}>
           <p>Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</p>
           <div className={style.wrapper}>

@@ -73,10 +73,13 @@ export default function Home() {
         {
           <Swiper
             modules={[Scrollbar, Pagination]}
+            initialSlide={1}
             slidesPerView={4.5}
             centeredSlides
             spaceBetween={0}
             slideToClickedSlide
+            height={480}
+            width={1000}
             pagination={{
               type: 'fraction',
               renderFraction: function (currentClass, totalClass) {
