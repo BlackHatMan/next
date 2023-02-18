@@ -7,6 +7,8 @@ import Link from 'next/link';
 import Slide from '../components/Slide';
 import iconPlay from '../public/play-btn.svg';
 
+import { srcImageSlides } from '../data/sourse';
+
 import 'swiper/css';
 import 'swiper/scss/pagination';
 
@@ -36,7 +38,7 @@ const routes = [
 ];
 
 export default function Home() {
-  const item = new Array(10).fill('1');
+  const item = Array(2).fill(srcImageSlides).flat();
   const router = useRouter();
 
   return (
@@ -88,10 +90,10 @@ export default function Home() {
             }}
             scrollbar={{ hide: false, draggable: true, dragSize: 30 }}
           >
-            {item.map((_, i) => {
+            {item.map((path, i) => {
               return (
-                <SwiperSlide key={i}>
-                  <Slide />
+                <SwiperSlide key={i + path.name}>
+                  <Slide path={path} />
                 </SwiperSlide>
               );
             })}

@@ -65,7 +65,7 @@
       &::before {
         content: url('../public/line.svg');
         position: absolute;
-        top: 33%;
+        top: 35%;
       }
     }
 
@@ -107,7 +107,7 @@
         height: 350px;
       }
       .swiper-slide:not(.swiper-slide-active) {
-        transform: scale(0.6);
+        transform: scale(0.65);
       }
     }
   }

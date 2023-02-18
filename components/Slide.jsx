@@ -8,12 +8,13 @@ import Dollar from '../public/dollar.svg';
 
 import style from './slide.module.scss';
 
-export default function Slide() {
+export default function Slide({ path }) {
+  /* find out how to use blurDataURL */
   const isActive = useSwiperSlide().isActive;
   return (
     //<div className={isActive ? `${style.container} ${style.active}` : `${style.container}`}>
     <div className={style.container}>
-      <Image src={panda} fill={true} alt="panda" />
+      <Image src={path.src.src} fill={true} alt="panda" />
       {isActive && (
         <div className={style.content}>
           <p>Panda’s name is Bei Bei. He is 2 years old. Bei Bei is from China. He loves bamboos.</p>
