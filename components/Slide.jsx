@@ -12,7 +12,6 @@ export default function Slide({ path }) {
   /* find out how to use blurDataURL */
   const isActive = useSwiperSlide().isActive;
   return (
-    //<div className={isActive ? `${style.container} ${style.active}` : `${style.container}`}>
     <div className={style.container}>
       <Image src={path.src.src} fill={true} alt="panda" />
       {isActive && (
