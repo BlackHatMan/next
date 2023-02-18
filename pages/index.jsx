@@ -71,34 +71,37 @@ export default function Home() {
           </h1>
           <Button startIcon={iconPlay}>Watch online</Button>
         </div>
-
-        {
-          <Swiper
-            modules={[Scrollbar, Pagination]}
-            initialSlide={1}
-            slidesPerView={4.5}
-            centeredSlides
-            spaceBetween={0}
-            slideToClickedSlide
-            height={480}
-            width={1000}
-            pagination={{
-              type: 'fraction',
-              renderFraction: function (currentClass, totalClass) {
-                return '<span class="' + currentClass + '"></span>' + '/' + '<span class="' + totalClass + '"></span>';
-              },
-            }}
-            scrollbar={{ hide: false, draggable: true, dragSize: 30 }}
-          >
-            {item.map((path, i) => {
-              return (
-                <SwiperSlide key={i + path.name}>
-                  <Slide path={path} />
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        }
+        <div className={style.swContainer}>
+          {
+            <Swiper
+              modules={[Scrollbar, Pagination]}
+              initialSlide={1}
+              slidesPerView={4.5}
+              centeredSlides
+              spaceBetween={0}
+              slideToClickedSlide
+              autoHeight={true}
+              height={480}
+              pagination={{
+                type: 'fraction',
+                renderFraction: function (currentClass, totalClass) {
+                  return (
+                    '<span class="' + currentClass + '"></span>' + '/' + '<span class="' + totalClass + '"></span>'
+                  );
+                },
+              }}
+              scrollbar={{ hide: false, draggable: true, dragSize: 30 }}
+            >
+              {item.map((path, i) => {
+                return (
+                  <SwiperSlide key={i + path.name}>
+                    <Slide path={path} />
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          }
+        </div>
       </div>
     </main>
   );
