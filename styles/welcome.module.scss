@@ -7,13 +7,13 @@
   align-items: center;
   width: 100%;
   height: $header-height;
+  padding: 0 150px;
   background-color: $global-white;
   color: black;
   font-family: 'Roboto', sans-serif;
   .logo {
     font-size: 3.6rem;
     font-weight: 900;
-    padding-left: 40px;
     line-height: 3rem;
     .status {
       font-size: 1.8rem;
@@ -21,19 +21,21 @@
       line-height: 1.6rem;
     }
   }
-  nav {
+  .navigation {
     display: flex;
     justify-content: space-between;
     width: 500px;
-    font-size: 1.6rem;
-    a.active {
-      color: red;
-      font-size: 40px;
+    a {
+      font-size: 1.6rem;
+    }
+    .active {
+      font-weight: 900;
+      line-height: 2rem;
+      border-bottom: solid 1px black;
     }
   }
   .theme {
-    width: 200px;
-    height: 100%;
+    cursor: pointer;
   }
 }
 
@@ -109,7 +111,6 @@
     .swiper-wrapper {
       .swiper-slide {
         transition: all 0.5s ease-out;
-        /*      width: 25% !important; */
         height: 350px;
       }
       .swiper-slide:not(.swiper-slide-active) {

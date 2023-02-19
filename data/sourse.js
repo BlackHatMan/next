@@ -26,3 +26,26 @@ export const srcImageSlides = [
     name: 'hawk',
   },
 ];
+
+export const routes = [
+  {
+    title: 'About',
+    url: '/',
+  },
+  {
+    title: 'Zoos',
+    url: 'zoos',
+  },
+  {
+    title: 'Map',
+    url: 'map',
+  },
+  {
+    title: 'Contact Us',
+    url: 'contact',
+  },
+  {
+    title: 'Design',
+    url: 'design',
+  },
+];

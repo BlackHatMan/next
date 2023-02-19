@@ -6,36 +6,14 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Slide from '../components/Slide';
 import iconPlay from '../public/play-btn.svg';
-
-import { srcImageSlides } from '../data/sourse';
+import plug from '../public/Plug.png';
+import { srcImageSlides, routes } from '../data/sourse';
 
 import 'swiper/css';
 import 'swiper/scss/pagination';
 
 import style from '../styles/welcome.module.scss';
-
-const routes = [
-  {
-    title: 'About',
-    url: '/',
-  },
-  {
-    title: 'Zoos',
-    url: 'zoos',
-  },
-  {
-    title: 'Map',
-    url: 'map',
-  },
-  {
-    title: 'Contact Us',
-    url: 'contact',
-  },
-  {
-    title: 'Design',
-    url: 'design',
-  },
-];
+import Image from 'next/image';
 
 export default function Home() {
   const item = Array(2).fill(srcImageSlides).flat();
@@ -53,16 +31,18 @@ export default function Home() {
           <p>ZOO</p>
           <p className={style.status}>online</p>
         </div>
-        <nav>
+        <nav className={style.navigation}>
           {routes.map((el, i) => {
             return (
-              <Link key={i} href={el.url} className={router.asPath === el.url ? 'active' : ''}>
+              <Link key={i} href={el.url} className={router.asPath === el.url ? style.active : ''}>
                 {el.title}
               </Link>
             );
           })}
         </nav>
-        <div className="theme">toggle</div>
+        <div className={style.theme}>
+          <Image src={plug} />
+        </div>
       </header>
       <div className={style.wrapper}>
         <div className={style.title}>
