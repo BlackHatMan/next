@@ -28,8 +28,8 @@ export default function Home() {
 
       <header className={style.header}>
         <div className={style.logo}>
-          <p>ZOO</p>
-          <p className={style.status}>online</p>
+          <h1>ZOO</h1>
+          <span>online</span>
         </div>
         <nav className={style.navigation}>
           {routes.map((el, i) => {
@@ -41,14 +41,14 @@ export default function Home() {
           })}
         </nav>
         <div className={style.theme}>
-          <Image src={plug} />
+          <Image src={plug} alt="plug" />
         </div>
       </header>
       <div className={style.wrapper}>
         <div className={style.title}>
-          <h1>
+          <p>
             Watch your favorite <br /> animal online
-          </h1>
+          </p>
           <Button startIcon={iconPlay}>Watch online</Button>
         </div>
         <div className={style.swContainer}>
